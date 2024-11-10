@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create New Product{% endblock %}
+
+{% block body %}
+    <h1>Create New Product</h1>
+
+    <form action="{{ path('product_create') }}" method="POST">
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="size">Size</label>
+            <input type="text" id="size" name="size" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Create Product</button>
+    </form>
+{% endblock %}

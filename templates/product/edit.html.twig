@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+    <h1>Edit Product</h1>
+
+    <form action="{{ path('product_edit', {'id': product.id}) }}" method="POST">
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input type="text" id="name" name="name" class="form-control" value="{{ product.name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" required>{{ product.description }}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="size">Size</label>
+            <input type="number" id="size" name="size" class="form-control" value="{{ product.size }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-warning">Update Product</button>
+    </form>
+{% endblock %}
